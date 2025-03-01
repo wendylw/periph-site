@@ -1,13 +1,14 @@
-// src/containers/home/index.jsx
 import React from "react";
 import { View, Text } from "@tarojs/components";
+import Header from "@common/components/Header";
 
 function Home() {
   return (
     <View>
-      <Text>Home Page</Text>
+      <Header />
+      <Text>Hello world!</Text>
     </View>
   );
 }
 
-export default Home; // 确保正确导出
+export default Home;

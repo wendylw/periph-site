@@ -1,4 +1,5 @@
 import { defineConfig } from "@tarojs/cli";
+import path from "path";
 
 import devConfig from "./dev";
 import prodConfig from "./prod";
@@ -43,6 +44,11 @@ export default defineConfig(async (merge, { command, mode }) => {
         },
       },
       webpackChain(chain) {
+        // 添加别名
+        chain.resolve.alias.set(
+          "@common",
+          path.resolve(__dirname, "..", "src/common"),
+        );
         // 配置 SCSS 规则
         chain.module
           .rule("scss")
@@ -105,6 +111,11 @@ export default defineConfig(async (merge, { command, mode }) => {
         },
       },
       webpackChain(chain) {
+        // 添加别名
+        chain.resolve.alias.set(
+          "@common",
+          path.resolve(__dirname, "..", "src/common"),
+        );
         // 配置 SCSS 规则
         chain.module
           .rule("scss")

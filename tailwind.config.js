@@ -10,11 +10,11 @@ module.exports = {
   theme: {
     // usage: tw-rounded[-sm|-lg|-xl|-2xl|-full]
     borderRadius: {
-      DEFAULT: "8px",
-      sm: "4px",
-      lg: "12px",
-      xl: "16px",
-      "2xl": "24px",
+      DEFAULT: "8Px",
+      sm: "4Px",
+      lg: "12Px",
+      xl: "16Px",
+      "2xl": "24Px",
       full: "50%",
     },
     fontFamily: {
@@ -60,18 +60,18 @@ module.exports = {
       wider: ".02em",
     },
     screens: {
-      sm: "420px",
-      md: "770px",
-      lg: "1030px",
-      xl: "1280px", // 添加 xl 断点
-      "2xl": "1536px", // 添加 2xl 断点
+      sm: "420Px",
+      md: "770Px",
+      lg: "1030Px",
+      xl: "1280Px", // 添加 xl 断点
+      "2xl": "1536Px", // 添加 2xl 断点
     },
     // usage: tw-shadow[-sm|-lg|-xl|-none]
     boxShadow: {
-      DEFAULT: "0 2px 16px rgba(0, 0, 0, 0.06)",
-      sm: "0 -4px 16px rgba(0, 0, 0, 0.06)",
-      lg: "0 4px 16px rgba(0, 0, 0, 0.06)",
-      xl: "0 4px 24px rgba(0, 0, 0, 0.06)",
+      DEFAULT: "0 2Px 16Px rgba(0, 0, 0, 0.06)",
+      sm: "0 -4Px 16Px rgba(0, 0, 0, 0.06)",
+      lg: "0 4Px 16Px rgba(0, 0, 0, 0.06)",
+      xl: "0 4Px 24Px rgba(0, 0, 0, 0.06)",
       none: "none",
     },
     spacing: {
@@ -85,6 +85,8 @@ module.exports = {
       16: "4.102564vw",
       20: "5.128205vw",
       24: "6.153846vw",
+      32: "8.533333vw",
+      40: "10.666666vw",
       "2px": "2px",
       "3px": "3px",
       "4px": "4px",
@@ -94,6 +96,8 @@ module.exports = {
       "16px": "16px",
       "20px": "20px",
       "24px": "24px",
+      "32px": "32px",
+      "40px": "40px",
     },
     extend: {
       colors: {

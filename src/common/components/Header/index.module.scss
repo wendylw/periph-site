@@ -1,0 +1,13 @@
+.Header {
+  @apply tw-hidden md:tw-block;
+}
+
+.HeaderContent {
+  max-width: 1280Px;
+  height: 54Px;
+}
+
+.HeaderLogoFigure {
+  width: 12%;
+  min-width: 100Px;
+}
