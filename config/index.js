@@ -35,12 +35,48 @@ export default defineConfig(async (merge, { command, mode }) => {
           config: {},
         },
         cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+          enable: true, // 启用 CSS Modules
           config: {
             namingPattern: "module", // 转换模式，取值为 global/module
-            generateScopedName: "[name]__[local]___[hash:base64:5]",
+            generateScopedName: "[name]__[local]___[hash:base64:5]", // 自定义类名格式
           },
         },
+      },
+      webpackChain(chain) {
+        // 配置 SCSS 规则
+        chain.module
+          .rule("scss")
+          .test(/\.scss$/)
+          .exclude.add(/\.module\.scss$/) // 排除 .module.scss 文件
+          .end()
+          .use("style-loader")
+          .loader("style-loader")
+          .end()
+          .use("css-loader")
+          .loader("css-loader")
+          .end()
+          .use("sass-loader")
+          .loader("sass-loader")
+          .end();
+
+        // 配置 CSS Modules 规则
+        chain.module
+          .rule("scss")
+          .test(/\.module\.scss$/) // 匹配 .module.scss 文件
+          .use("style-loader")
+          .loader("style-loader")
+          .end()
+          .use("css-loader")
+          .loader("css-loader")
+          .options({
+            modules: {
+              localIdentName: "[name]__[local]___[hash:base64:5]", // 自定义类名格式
+            },
+          })
+          .end()
+          .use("sass-loader")
+          .loader("sass-loader")
+          .end();
       },
     },
     h5: {
@@ -61,12 +97,48 @@ export default defineConfig(async (merge, { command, mode }) => {
           config: {},
         },
         cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+          enable: true, // 启用 CSS Modules
           config: {
             namingPattern: "module", // 转换模式，取值为 global/module
-            generateScopedName: "[name]__[local]___[hash:base64:5]",
+            generateScopedName: "[name]__[local]___[hash:base64:5]", // 自定义类名格式
           },
         },
+      },
+      webpackChain(chain) {
+        // 配置 SCSS 规则
+        chain.module
+          .rule("scss")
+          .test(/\.scss$/)
+          .exclude.add(/\.module\.scss$/) // 排除 .module.scss 文件
+          .end()
+          .use("style-loader")
+          .loader("style-loader")
+          .end()
+          .use("css-loader")
+          .loader("css-loader")
+          .end()
+          .use("sass-loader")
+          .loader("sass-loader")
+          .end();
+
+        // 配置 CSS Modules 规则
+        chain.module
+          .rule("scss")
+          .test(/\.module\.scss$/) // 匹配 .module.scss 文件
+          .use("style-loader")
+          .loader("style-loader")
+          .end()
+          .use("css-loader")
+          .loader("css-loader")
+          .options({
+            modules: {
+              localIdentName: "[name]__[local]___[hash:base64:5]", // 自定义类名格式
+            },
+          })
+          .end()
+          .use("sass-loader")
+          .loader("sass-loader")
+          .end();
       },
     },
     rn: {

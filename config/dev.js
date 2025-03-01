@@ -1,10 +1,23 @@
-
-
 export default {
-   logger: {
+  logger: {
     quiet: false,
-    stats: true
+    stats: true,
   },
-  mini: {},
-  h5: {}
-}
+  mini: {
+    postcss: {
+      cssModules: {
+        enable: true, // 启用 CSS Modules
+      },
+    },
+  },
+  h5: {
+    postcss: {
+      cssModules: {
+        enable: true, // 启用 CSS Modules
+      },
+    },
+  },
+  cache: {
+    enable: true, // 启用持久化缓存
+  },
+};
