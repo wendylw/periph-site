@@ -73,3 +73,4 @@ coverage/
 *.bak
 *.patch
 *.diff
+periph-site.code-workspace
