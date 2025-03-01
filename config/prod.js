@@ -8,31 +8,31 @@ export default {
       cssModules: {
         enable: true, // 启用 CSS Modules
         config: {
-          namingPattern: 'module', // 类名生成规则
-          generateScopedName: '[name]__[local]___[hash:base64:5]', // 自定义类名格式
+          namingPattern: "module", // 类名生成规则
+          generateScopedName: "[name]__[local]___[hash:base64:5]", // 自定义类名格式
         },
       },
     },
     webpackChain(chain) {
       // 配置 Tailwind CSS
       chain.module
-        .rule('scss')
+        .rule("scss")
         .test(/\.scss$/)
-        .use('postcss-loader')
-        .loader('postcss-loader')
+        .use("postcss-loader")
+        .loader("postcss-loader")
         .options({
           postcssOptions: {
             plugins: [
-              require('tailwindcss')({
-                config: require.resolve('../tailwind.config.js'), // 指定 Tailwind 配置文件路径
+              require("tailwindcss")({
+                config: require.resolve("../tailwind.config.js"), // 指定 Tailwind 配置文件路径
               }),
-              require('autoprefixer'),
+              require("autoprefixer"),
             ],
           },
         })
         .end()
-        .use('sass-loader')
-        .loader('sass-loader')
+        .use("sass-loader")
+        .loader("sass-loader")
         .end();
     },
   },
@@ -40,7 +40,10 @@ export default {
     compile: {
       include: [
         // 确保产物为 es5
-        filename => /node_modules\/(?!(@babel|core-js|style-loader|css-loader|react|react-dom))/.test(filename),
+        (filename) =>
+          /node_modules\/(?!(@babel|core-js|style-loader|css-loader|react|react-dom))/.test(
+            filename
+          ),
       ],
     },
     postcss: {
@@ -51,31 +54,31 @@ export default {
       cssModules: {
         enable: true, // 启用 CSS Modules
         config: {
-          namingPattern: 'module', // 类名生成规则
-          generateScopedName: '[name]__[local]___[hash:base64:5]', // 自定义类名格式
+          namingPattern: "module", // 类名生成规则
+          generateScopedName: "[name]__[local]___[hash:base64:5]", // 自定义类名格式
         },
       },
     },
     webpackChain(chain) {
       // 配置 Tailwind CSS
       chain.module
-        .rule('scss')
+        .rule("scss")
         .test(/\.scss$/)
-        .use('postcss-loader')
-        .loader('postcss-loader')
+        .use("postcss-loader")
+        .loader("postcss-loader")
         .options({
           postcssOptions: {
             plugins: [
-              require('tailwindcss')({
-                config: require.resolve('../tailwind.config.js'), // 指定 Tailwind 配置文件路径
+              require("tailwindcss")({
+                config: require.resolve("../tailwind.config.js"), // 指定 Tailwind 配置文件路径
               }),
-              require('autoprefixer'),
+              require("autoprefixer"),
             ],
           },
         })
         .end()
-        .use('sass-loader')
-        .loader('sass-loader')
+        .use("sass-loader")
+        .loader("sass-loader")
         .end();
 
       // 启用 webpack-bundle-analyzer（可选）
@@ -99,4 +102,6 @@ export default {
     enable: true, // 启用持久化缓存
   },
   esbuild: {
-    logOverride: { 'empty-glob': 'silent' }, // 忽略 empty-glob 警告
+    logOverride: { "empty-glob": "silent" }, // 忽略 empty-glob 警告
+  },
+};
