@@ -1,0 +1,75 @@
+
+
+# 依赖目录
+node_modules/
+.pnp
+.pnp.js
+
+# 构建输出目录
+dist/
+build/
+deploy_versions/
+
+# 缓存文件
+.cache/
+.temp/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 环境变量文件
+.env
+.env.local
+.env.development
+.env.production
+
+
+# IDE 配置文件
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.swc
+
+
+# 操作系统生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 测试相关
+coverage/
+.nyc_output/
+
+# 本地开发文件
+.project
+.project.local
+*.local
+
+# Taro 生成的文件
+.project
+.project.local
+.taro/
+.taro-temp/
+.rn_temp/
+
+# 其他
+*.log
+*.tmp
+*.bak
+*.patch
+*.diff
