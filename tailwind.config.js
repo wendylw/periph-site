@@ -63,8 +63,8 @@ module.exports = {
       sm: "420Px",
       md: "770Px",
       lg: "1030Px",
-      xl: "1280Px", // 添加 xl 断点
-      "2xl": "1536Px", // 添加 2xl 断点
+      xl: "1280Px",
+      "2xl": "1536Px",
     },
     // usage: tw-shadow[-sm|-lg|-xl|-none]
     boxShadow: {
@@ -86,7 +86,7 @@ module.exports = {
       20: "5.128205vw",
       24: "6.153846vw",
       32: "8.533333vw",
-      40: "10.666666vw",
+      40: "10.666667vw",
       "2px": "2px",
       "3px": "3px",
       "4px": "4px",

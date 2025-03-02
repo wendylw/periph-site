@@ -7,7 +7,7 @@ import styles from "./index.module.scss";
 const Header = ({ navigators = [] }) => {
   const headerContentClassName = getClassName([
     styles.HeaderContent,
-    "tw-mx-auto tw-px-40 sm:tw-px-40px",
+    "tw-mx-auto",
   ]);
   const headerLogoFigureClassName = getClassName([
     styles.HeaderLogoFigure,
