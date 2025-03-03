@@ -23,23 +23,23 @@ module.exports = {
     // usage: tw-text-[xs|sm|base|lg|xl|2xl|3xl|4xl|5xl]
     fontSize: {
       // 10px
-      xs: "0.7142rem",
+      xs: "10Px",
       // 12px
-      sm: "0.8571rem",
+      sm: "12Px",
       // 14px
-      base: "1rem",
+      base: "14Px",
       // 16px
-      lg: "1.1428rem",
+      lg: "16Px",
       // 18px
-      xl: "1.2857rem",
+      xl: "18Px",
       // 20px
-      "2xl": "1.4285rem",
+      "2xl": "20Px",
       // 30px
-      "3xl": "2.1428rem",
+      "3xl": "30Px",
       // 36px
-      "4xl": "2.5714rem",
+      "4xl": "36Px",
       // 40px
-      "5xl": "2.8571rem",
+      "5xl": "40Px",
     },
     // usage: tw-font-[normal|bold|black]
     fontWeight: {
@@ -103,12 +103,6 @@ module.exports = {
       colors: {
         black: {
           DEFAULT: "#000000",
-        },
-        orange: {
-          DEFAULT: "#FF9419",
-          dark: "#FC7118",
-          light: "#FEC788",
-          lighter: "#FFF2E3",
         },
         red: {
           DEFAULT: "#E15343",
