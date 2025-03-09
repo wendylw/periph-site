@@ -27,6 +27,10 @@
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "comma-dangle": ["error", "always-multiline"], // 非 JSON 文件允许尾随逗号
+    "import/no-duplicates": "off", // 禁用重复导入检查
+    "import/no-named-as-default": "off", // 禁用默认导出命名检查
+    "import/no-named-as-default-member": "off", // 禁用默认导出成员命名检查
+    "import/no-commonjs": "off", // 禁用 CommonJS 语法检查
   },
   "settings": {
     "react": {

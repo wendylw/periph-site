@@ -10,6 +10,6 @@
   max-width: 180px;
 }
 
-button.HeaderLoginButton {
-  @apply tw-text-base tw-border-0;
+taro-button-core[plain].HeaderLoginButton {
+  @apply tw-flex tw-items-center tw-gap-4px tw-text-base tw-border-0;
 }

@@ -1,11 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { View, Image, Navigator, Button } from "@tarojs/components";
-import { UserCircle } from "phosphor-react";
+import { View, Image, Navigator, Button, Text } from "@tarojs/components";
+import { UserCircle, CaretDown } from "@phosphor-icons/react";
 import { getClassName } from "@common/utils/ui";
 import styles from "./index.module.scss";
 
-const Header = ({ navigators = [], onLoginButtonClick = () => {} }) => {
+const Header = ({
+  navigators = [],
+  isLogin = false,
+  userName = "Samuel",
+  userAvatar = null,
+  userNavigators = [],
+  onLoginButtonClick = () => {},
+}) => {
   const headerContentClassName = getClassName([
     styles.HeaderContent,
     "tw-flex tw-justify-between tw-items-center tw-mx-auto",
@@ -16,13 +23,12 @@ const Header = ({ navigators = [], onLoginButtonClick = () => {} }) => {
   ]);
 
   return (
-    <View className="tw-hidden sm:tw-block tw-sticky tw-top-0 tw-left-0 tw-w-full tw-z-60 tw-bg-white tw-shadow-sm">
+    <View className="tw-hidden md:tw-block tw-sticky tw-top-0 tw-left-0 tw-w-full tw-z-60 tw-bg-white tw-shadow-sm">
       <div className={headerContentClassName}>
         <figure className={headerLogoFigureClassName}>
           <Image
             className="tw-flex tw-item-center tw-w-full tw-h-full"
             src="https://placehold.co/400x120"
-            // image is fit to the container size
             mode="aspectFit"
           />
         </figure>
@@ -41,13 +47,34 @@ const Header = ({ navigators = [], onLoginButtonClick = () => {} }) => {
           </nav>
 
           <View>
-            <Button
-              className={styles.HeaderLoginButton}
-              plain
-              onClick={onLoginButtonClick}
-            >
-              <UserCircle size={24} weight="light" />
-            </Button>
+            {!isLogin ? (
+              <>
+                <Button
+                  className={styles.HeaderLoginButton}
+                  plain
+                  onClick={onLoginButtonClick}
+                >
+                  <UserCircle size={24} />
+                  <Text>{userName}</Text>
+                  <CaretDown size={18} />
+                </Button>
+                <nav>
+                  {userNavigators.map((userNavigator) => (
+                    <Navigator key={userNavigator.key} url={userNavigator.url}>
+                      {userNavigator.url}
+                    </Navigator>
+                  ))}
+                </nav>
+              </>
+            ) : (
+              <Button
+                className={styles.HeaderLoginButton}
+                plain
+                onClick={onLoginButtonClick}
+              >
+                <UserCircle size={24} />
+              </Button>
+            )}
           </View>
         </div>
       </div>
@@ -64,6 +91,17 @@ Header.propTypes = {
       url: PropTypes.string,
     }),
   ),
+  isLogin: PropTypes.bool,
+  userName: PropTypes.string,
+  userAvatar: PropTypes.string,
+  userNavigators: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+      label: PropTypes.string,
+      url: PropTypes.string,
+    }),
+  ),
+  onLoginButtonClick: PropTypes.func,
 };
 
 export default Header;
