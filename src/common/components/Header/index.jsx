@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { View, Image, Navigator } from "@tarojs/components";
+import { View, Image, Navigator, Button } from "@tarojs/components";
 import { getClassName } from "@common/utils/ui";
 import styles from "./index.module.scss";
 
@@ -41,6 +41,12 @@ const Header = ({ navigators = [] }) => {
             </Navigator>
           ))}
         </nav>
+
+        <View className="login-container">
+          <Button className="login-button" onClick={() => {}}>
+            登录
+          </Button>
+        </View>
       </div>
     </View>
   );

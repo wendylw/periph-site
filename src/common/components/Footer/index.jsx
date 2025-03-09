@@ -73,8 +73,7 @@ const Footer = ({ medias = [], services = [], companyInfos = [] }) => {
         </View>
         <View className={styles.FooterBottom}>
           <Text className="tw-text-center tw-text-sm tw-uppercase">
-            `$place-years` `$place-company` Rights Reserved 备案号：
-            `$place-icp`
+            `$place-years` `$place-company` Rights Reserved 备案号：`$place-icp`
           </Text>
         </View>
       </div>

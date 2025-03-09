@@ -1,15 +1,51 @@
 {
-  "extends": ["taro/react"],
+  "env": {
+    "browser": true,
+    "es2021": true,
+  },
+  "extends": ["taro/react", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true, // 允许解析 JSX
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+  },
+  "plugins": [
+    "react", // 启用 React 插件
+  ],
   "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^React$", // 忽略 React
+      },
+    ],
+    // 允许 className 使用双引号
+    "jsx-quotes": ["error", "prefer-double"],
+    // 允许未使用的 React 导入（如果你不想 ESLint 报错）
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "comma-dangle": ["error", "always-multiline"], // 非 JSON 文件允许尾随逗号
   },
   "settings": {
+    "react": {
+      "version": "detect", // 自动检测 React 版本
+    },
     "import/resolver": {
       "alias": {
         "map": [["@common", "./src/common"]],
-        "extensions": [".js", ".jsx"]
-      }
-    }
-  }
+        "extensions": [".js", ".jsx"],
+      },
+    },
+  },
+  "overrides": [
+    {
+      "files": ["*.json"], // 针对 JSON 文件
+      "parser": "jsonc-eslint-parser", // 使用 jsonc 解析器
+      "rules": {
+        "jsonc/trailing-comma": "error", // JSON 文件不允许尾随逗号
+      },
+    },
+  ],
 }
