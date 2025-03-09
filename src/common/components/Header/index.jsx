@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { View, Image, Navigator, Button, Text } from "@tarojs/components";
+import { Avatar } from "@nutui/nutui-react";
 import { UserCircle, CaretDown } from "@phosphor-icons/react";
 import { getClassName } from "@common/utils/ui";
 import styles from "./index.module.scss";
@@ -54,7 +55,7 @@ const Header = ({
                   plain
                   onClick={onLoginButtonClick}
                 >
-                  <UserCircle size={24} />
+                  <Avatar size="small" src={userAvatar} />
                   <Text>{userName}</Text>
                   <CaretDown size={18} />
                 </Button>
